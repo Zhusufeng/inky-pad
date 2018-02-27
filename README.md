@@ -19,9 +19,14 @@ npm install
 ### Run the App on Your Local Machine
 To start the app, use the npm scripts
 
-First you need to compile it, so run:
+First you need to compile it, so use the following command:
 ```
 npm run dev
+```
+
+To start the front end server, use the following command:
+```
+npm start
 ```
 
 Now go to your browser and use this address to see the app:
