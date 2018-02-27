@@ -4,7 +4,9 @@
   "description": "React, Redux, Webpack, jQuery, Bootstrap to do list",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "webpack-dev-server",
+    "dev": "webpack --mode development"
   },
   "repository": {
     "type": "git",
