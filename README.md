@@ -1,3 +1,13 @@
+# Inky Pad
+Inky Pad is a to-do list project by Lisa Gee.
+Its tech stack is React 16, Webpack 4.
+
+To be implemented is Redux for state management, Bootstrap for styling, Node with Express for server, and MySQL for database.
+
+```
+Screenshot to be inserted
+```
+
 ### Requirements
 You will need the following in order to start up the app
 - npm
