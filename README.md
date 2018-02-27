@@ -19,11 +19,10 @@ npm install
 ### Run the App on Your Local Machine
 To start the app, use the npm scripts
 
-First you need to compile it
+First you need to compile it, so run:
 ```
 npm run dev
 ```
-This will compile the files and start up the webpack-dev-server 
 
 Now go to your browser and use this address to see the app:
 ```
