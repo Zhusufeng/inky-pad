@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const ListMenu = () => (
+const ListMenu = ({lists}) => (
   <div>
     <h3>Lists</h3>
     <ul>
       {
-        for (let key in this.props) {
-          <li>key</li>
-        }
+        Object.keys(lists).map(item => {
+          return (<li>{item}</li>);
+        })
       }
     </ul>
   </div>
