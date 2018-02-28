@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default class ListMenu extends React.Component {
-  render () {
-    return (
-      <div>
-        <h3>Lists</h3>
-        <ul>
-          <li>Temp</li>
-        </ul>
-      </div>
-    );
-  }
-}
+export default const ListMenu = () => (
+  <div>
+    <h3>Lists</h3>
+    <ul>
+      {
+        for (let key in this.props) {
+          <li>key</li>
+        }
+      }
+    </ul>
+  </div>
+
+);
