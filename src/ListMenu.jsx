@@ -11,6 +11,10 @@ const ListMenu = ({lists}) => (
         })
       }
     </ul>
+    <input onClick=""/>
+    <button>
+      Create List
+    </button>
   </div>
 
 );
