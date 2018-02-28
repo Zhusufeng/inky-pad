@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default const ListMenu = () => (
+const ListMenu = () => (
   <div>
     <h3>Lists</h3>
     <ul>
@@ -14,3 +14,5 @@ export default const ListMenu = () => (
   </div>
 
 );
+
+export default ListMenu;
