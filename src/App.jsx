@@ -10,6 +10,10 @@ export default class App extends React.Component {
         homework: [
           'Read Tale of Two Cities',
           'Finish Chapter 2 problems'
+        ],
+        chores: [
+          'Wash dishes',
+          'Do laundry'
         ]
       },
       history: []
