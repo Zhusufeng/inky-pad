@@ -20,11 +20,19 @@ export default class App extends React.Component {
     };
   }
 
+  createList (listName) {
+    console.log('Create list was clicked: ', listName);
+  }
+
   render () {
     return (
       <div>
         <h1>Inky Pad</h1>
-        <ListMenu lists={this.state.lists}></ListMenu>
+        <ListMenu 
+          lists={this.state.lists}
+          createList={this.createList.bind(this)}
+        >
+        </ListMenu>
       </div>
     );
   }
