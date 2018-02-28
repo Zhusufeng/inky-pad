@@ -11,7 +11,13 @@ const ListMenu = ({lists, createList}) => (
         })
       }
     </ul>
-    <input type="text" id="list-menu-input"/>
+    <input 
+      type="text" 
+      id="list-menu-input"
+      minlength="1"
+      maxlength="20" 
+      required
+    />
     <button
       onClick={(e) => {
         const input = document.getElementById('list-menu-input').value;
