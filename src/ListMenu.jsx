@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const ListMenu = ({lists}) => (
+const ListMenu = ({lists, createList}) => (
   <div>
     <h3>Lists</h3>
     <ul>
@@ -11,8 +11,13 @@ const ListMenu = ({lists}) => (
         })
       }
     </ul>
-    <input onClick=""/>
-    <button>
+    <input type="text" id="list-menu-input"/>
+    <button
+      onClick={(e) => {
+        const input = document.getElementById('list-menu-input').value;
+        return createList(input);
+      }}
+    >
       Create List
     </button>
   </div>
