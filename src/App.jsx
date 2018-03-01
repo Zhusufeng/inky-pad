@@ -22,6 +22,12 @@ export default class App extends React.Component {
 
   createList (listName) {
     console.log('Create list was clicked: ', listName);
+    const newList = {};
+    this.setState({
+      [listName]: []
+    }, () => {
+      console.log(Object.keys(this.state));
+    });
   }
 
   render () {
