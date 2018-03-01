@@ -14,8 +14,8 @@ const ListMenu = ({lists, createList}) => (
     <input 
       type="text" 
       id="list-menu-input"
-      minlength="1"
-      maxlength="20" 
+      minLength="1"
+      maxLength="20" 
       required
     />
     <button
