@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListMenu from './ListMenu.jsx'
+import ListMenu from './ListMenu.jsx';
+import ListsContainer from './ListsContainer.jsx';
 
 export default class App extends React.Component {
   constructor (props) {
@@ -38,8 +39,10 @@ export default class App extends React.Component {
         <ListMenu 
           lists={this.state.lists}
           createList={this.createList.bind(this)}
-        >
-        </ListMenu>
+        />
+        <ListsContainer 
+          lists={this.state.lists}
+        />
       </div>
     );
   }
