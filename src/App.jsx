@@ -22,11 +22,12 @@ export default class App extends React.Component {
 
   createList (listName) {
     console.log('Create list was clicked: ', listName);
-    const newList = {};
+    const newList = {[listName]: []};
+    console.log(newList);
     this.setState({
-      [listName]: []
+      lists: Object.assign({}, this.state.lists, newList) 
     }, () => {
-      console.log(Object.keys(this.state));
+      console.log(this.state);
     });
   }
 
