@@ -6,7 +6,7 @@ const ListsContainer = ({lists}) => (
   <div>
     {
       Object.keys(lists).map(list => {
-        return (<List list={list}/>);
+        return (<List name={list} items={lists[list]}/>);
       })
     }
   </div>
