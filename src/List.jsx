@@ -52,8 +52,8 @@ export default class List extends React.Component {
       <div>
         <h3>{this.props.name}</h3>
         <ul> 
-          {this.props.items.map(item => {
-            return (<li>{item}</li>);
+          {this.props.items.map((item, key) => {
+            return (<li key={key}>{item}</li>);
           })}
         </ul>
         <form onSubmit={this.addToList.bind(this)}>
