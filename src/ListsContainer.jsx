@@ -5,8 +5,14 @@ import List from './List.jsx';
 const ListsContainer = ({lists}) => (
   <div>
     {
-      Object.keys(lists).map(list => {
-        return (<List name={list} items={lists[list]}/>);
+      Object.keys(lists).map((list, key) => {
+        return (
+          <List 
+            name={list} 
+            items={lists[list]}
+            key={key}
+          />
+        );
       })
     }
   </div>
