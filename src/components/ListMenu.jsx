@@ -11,7 +11,7 @@ class ListMenu extends Component {
   }
 
   addList () {
-
+    this.props.addList(this.state.newList);
   }
 
   render () {
@@ -32,7 +32,7 @@ class ListMenu extends Component {
           onChange={(e) => this.setState({newList: e.target.value})}
         />
         <button
-          onClick={() => this.addList(input)}
+          onClick={() => this.addList()}
         >
           Create List
         </button>
