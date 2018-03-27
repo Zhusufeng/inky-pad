@@ -43,10 +43,16 @@ class ListMenu extends Component {
 }
 
 function mapStateToProps(state) {
-  const { lists } = state; // grab lists object from store
-  return {
-    lists
-  };
+  if (state.lists) {
+    const { lists } = state; // grab lists object from store
+    return {
+      lists
+    };
+  } else {
+    return {
+      lists: {}
+    };
+  }
 }
 
 export default connect(mapStateToProps, { addList })(ListMenu);
