@@ -1,9 +1,9 @@
 import { ADD_LIST } from '../constants';
 
-export const addList = (name) => {
+export const addList = (listName) => {
   const action = {
     type: ADD_LIST,
-    name
+    listName
   };
   console.log('action in addList', action);
   return action;
