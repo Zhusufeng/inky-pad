@@ -15,6 +15,7 @@ class ListMenu extends Component {
   }
 
   render () {
+    console.log('this.props', this.props);
     return (
       <div>
         <h3>Lists</h3>
@@ -32,7 +33,7 @@ class ListMenu extends Component {
           onChange={(e) => this.setState({newList: e.target.value})}
         />
         <button
-          onClick={() => this.addList()}
+          onClick={() => this.addList(this.state.newList)}
         >
           Create List
         </button>
@@ -42,7 +43,10 @@ class ListMenu extends Component {
 }
 
 function mapStateToProps(state) {
-  return state;
+  const { lists } = state; // grab lists object from store
+  return {
+    lists
+  };
 }
 
 export default connect(mapStateToProps, { addList })(ListMenu);
