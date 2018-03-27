@@ -8,28 +8,52 @@ class ListsContainer extends Component {
     super(props);
   }
 
+  renderLists () {
+    if (!this.props.lists) {
+      return (
+        <div>
+          Nothing in ListsContainer
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          {
+            Object.keys(this.props.lists).map((listName, key) => {
+              return (
+                <List 
+                  name={listName} 
+                  items={this.props.lists[listName]}
+                  key={key}
+                />
+              );
+            })
+          }
+        </div>
+      );
+    }
+  }
+
   render () {
     return (
       <div>
-        {
-          Object.keys(this.props.lists).map((listName, key) => {
-            return (
-              <List 
-                name={listName} 
-                items={this.props.lists[listName]}
-                key={key}
-              />
-            );
-          })
-        }
+        { this.renderLists() }
       </div>
     );
   }
 }
 
-function mapStateToProps (state) {
-  const { lists } = state; // grab lists object from store
-  return { lists };
+function mapStateToProps(state) {
+  if (!state.lists) {
+    return {
+      lists: {}
+    };
+  } else {
+    const { lists } = state; // grab lists object from store
+    return {
+      lists
+    };
+  }
 }
 
 export default connect(mapStateToProps, null)(ListsContainer);
