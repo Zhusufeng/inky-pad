@@ -14,11 +14,13 @@ class ListMenu extends Component {
     this.props.addList(this.state.newList);
   }
 
-  render () {
-    console.log('this.props', this.props);
-    return (
-      <div>
-        <h3>Lists</h3>
+  renderLists () {
+    if (!this.props.lists) {
+      return (
+        <div>No Lists Yet</div>
+      );
+    } else {
+      return (
         <ul>
           {
             Object.keys(this.props.lists).map((listName, key) => {
@@ -26,6 +28,18 @@ class ListMenu extends Component {
             })
           }
         </ul>
+      );
+    }
+  }
+
+  render () {
+    console.log('this.props', this.props);
+    return (
+      <div>
+        <h3>Lists</h3>
+        <div>
+          { this.renderLists() }
+        </div>
         <input 
           type="text" 
           id="list-menu-input"
@@ -43,14 +57,14 @@ class ListMenu extends Component {
 }
 
 function mapStateToProps(state) {
-  if (state.lists) {
+  if (!state.lists) {
+    return {
+      lists: {}
+    };
+  } else {
     const { lists } = state; // grab lists object from store
     return {
       lists
-    };
-  } else {
-    return {
-      lists: {}
     };
   }
 }
