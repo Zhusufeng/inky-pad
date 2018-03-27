@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addList } from '../actions';
+
 import ListMenu from './ListMenu.jsx';
 import ListsContainer from './ListsContainer.jsx';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -46,3 +49,9 @@ export default class App extends React.Component {
     );
   }
 }
+
+function mapStateToProps (state) {
+  return state;
+}
+
+export default connect(mapStateToProps, { addList })(App);
