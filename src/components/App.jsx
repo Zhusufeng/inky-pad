@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ListMenu from './ListMenu.jsx';
 import ListsContainer from './ListsContainer.jsx';
 
