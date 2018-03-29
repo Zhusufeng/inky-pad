@@ -1,17 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { addTask } from '../actions';
 
-export default class List extends React.Component {
+class List extends React.Component {
   constructor (props) {
     super(props);
-
+    this.state = {
+      task: ''
+    };
   }
 
-  addToList (e) {
-    e.preventDefault();
-    console.log('e is ', e);
-    console.log('e.target is ', e.target);
-    console.log('e.target[0].value is ', e.target[0].value);
+  addToList (task) {
+    console.log('task is ', task);
+    this.props.addTask(task, this.props.name);
   }
 
   render () {
@@ -26,11 +27,19 @@ export default class List extends React.Component {
             })
           }
         </ul>
-        <form onSubmit={this.addToList.bind(this)}>
-          <input type="text" />
-          <input type="submit" />
+        <form>
+          <input 
+            type="text" 
+            onChange={(e) => this.setState({ task: e.target.value})}
+          />
+          <input 
+            type="submit" 
+            onClick={() => this.addToList(this.state.task)}
+          />
         </form>
       </div>
     );
   }
 }
+
+export default connect(null, { addTask })(List);
