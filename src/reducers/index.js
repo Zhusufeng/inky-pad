@@ -4,10 +4,17 @@ const rootReducer = (state = {}, action) => {
   switch(action.type) {
     case ADD_LIST:
       const { listName } = action; 
-      const lists = { 
+      let newState = {};
+      let lists = { 
         [listName]: [] 
       };
-      const newState = Object.assign({}, state, { lists });      
+
+      if (!state.lists) {
+        newState = Object.assign({}, state, { lists });
+      } else {
+        lists = Object.assign({}, state.lists, lists);
+        newState = Object.assign({}, state, { lists });
+      }  
       console.log('newState: ', newState);
       return newState; 
 
@@ -17,25 +24,5 @@ const rootReducer = (state = {}, action) => {
 };
 
 export default rootReducer;
-
-/* Tests
-
-// No lists inside
-const state = {};
-const action = {listName: 'groceries'};
-const { listName } = action; 
-const lists = { [listName]: [] };
-const newState = Object.assign({}, state, { lists });
-console.log(newState);
-
-// Has lists
-const state = { lists: {} };
-const action = {listName: 'groceries'};
-const { listName } = action; 
-const lists = { [listName]: [] };
-const newState = Object.assign({}, state, { lists });
-console.log(newState);
-
-*/
 
 
