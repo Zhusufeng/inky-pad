@@ -18,19 +18,11 @@ const rootReducer = (state = {}, action) => {
 
     case ADD_TASK: {
       const { task, listName } = action;
-      console.log('task', task);
-      console.log('listName', listName);
-      
-      // Combines new tasks to old tasks
       const newArray = [...state.lists[listName], task];
-      console.log('newArray', newArray);
-
-      // Update state.lists[listName]
-      let lists = { 
+      const updateList = { 
         [listName]: newArray 
       };
-
-      // Update state.lists
+      const lists = Object.assign({}, state.lists, updateList);
       const newState = Object.assign({}, state, { lists });
       console.log('newState: ', newState);
       return newState;
