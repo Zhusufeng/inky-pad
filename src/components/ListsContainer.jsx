@@ -8,16 +8,9 @@ class ListsContainer extends Component {
     super(props);
   }
 
-  renderLists () {
-    if (!this.props.lists) {
-      return (
-        <div>
-          Nothing in ListsContainer
-        </div>
-      );
-    } else {
-      return (
-        <div>
+  render () {
+    return (
+      <div>
           {
             Object.keys(this.props.lists).map((listName, key) => {
               return (
@@ -29,15 +22,6 @@ class ListsContainer extends Component {
               );
             })
           }
-        </div>
-      );
-    }
-  }
-
-  render () {
-    return (
-      <div>
-        { this.renderLists() }
       </div>
     );
   }
