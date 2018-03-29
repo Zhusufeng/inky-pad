@@ -27,16 +27,17 @@ class List extends React.Component {
             })
           }
         </ul>
-        <form>
+        <div>
           <input 
             type="text" 
             onChange={(e) => this.setState({ task: e.target.value})}
           />
-          <input 
-            type="submit" 
+          <button 
             onClick={() => this.addToList(this.state.task)}
-          />
-        </form>
+          >
+            Submit
+          </button>
+        </div>
       </div>
     );
   }
