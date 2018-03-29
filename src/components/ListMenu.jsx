@@ -14,31 +14,19 @@ class ListMenu extends Component {
     this.props.addList(this.state.newList);
   }
 
-  renderLists () {
-    if (!this.props.lists) {
-      return (
-        <div>No Lists Yet</div>
-      );
-    } else {
-      return (
-        <ul>
-          {
-            Object.keys(this.props.lists).map((listName, key) => {
-              return (<li key={key}>{listName}</li>);
-            })
-          }
-        </ul>
-      );
-    }
-  }
-
   render () {
     // console.log('this.props', this.props);
     return (
       <div>
         <h3>Lists</h3>
         <div>
-          { this.renderLists() }
+          <ul>
+            {
+              Object.keys(this.props.lists).map((listName, key) => {
+                return (<li key={key}>{listName}</li>);
+              })
+            }
+          </ul>
         </div>
         <input 
           type="text" 
