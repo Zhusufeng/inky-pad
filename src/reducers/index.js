@@ -1,22 +1,27 @@
-import { ADD_LIST } from '../constants';
+import { ADD_LIST, ADD_TASK } from '../constants';
 
 const rootReducer = (state = {}, action) => {
   switch(action.type) {
     case ADD_LIST:
       const { listName } = action; 
-      let newState = {};
       let lists = { 
         [listName]: [] 
       };
-
-      if (!state.lists) {
-        newState = Object.assign({}, state, { lists });
-      } else {
+      if (state.lists) {
         lists = Object.assign({}, state.lists, lists);
-        newState = Object.assign({}, state, { lists });
-      }  
+      } 
+      const newState = Object.assign({}, state, { lists });
       console.log('newState: ', newState);
       return newState; 
+
+    case ADD_TASK: 
+      // const { task, listName } = action;
+      // const newArray = [...state.lists[listName], task];
+      // const updateAList = Object.assign({}, state.lists[listName], newArray);
+      // const lists = Object.assign({}, state.lists, updateAList);
+      // const newState = Object.assign({}, state, { lists });
+      // console.log('newState: ', newState);
+      // return newState;
 
     default:
       return state;
