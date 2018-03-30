@@ -1,4 +1,4 @@
-import { ADD_LIST, ADD_TASK } from '../constants';
+import { ADD_LIST, ADD_TASK, FINISH_TASK } from '../constants';
 
 export const addList = (listName) => {
   const action = {
@@ -16,5 +16,15 @@ export const addTask = (task, listName) => {
     listName
   };
   console.log('action in addTask', action);
+  return action;
+};
+
+export const finishTask = (task, listName) => {
+  const action = {
+    type: FINISH_TASK,
+    task,
+    listName
+  };
+  console.log('action in finishTask', action);
   return action;
 };
