@@ -33,11 +33,11 @@ class List extends React.Component {
                   key={key}
                 >
                   <input 
-                    type="checkbox" 
-                    key={key} 
-                    id={}
+                    type="checkbox"  
+                    id={item + key}
+                    onClick={() => this.finishTask(item)}
                   />
-                  <label for={}>
+                  <label htmlFor={item + key}>
                     {item}
                   </label>
                 </li>
@@ -61,4 +61,4 @@ class List extends React.Component {
   }
 }
 
-export default connect(null, { addTask })(List);
+export default connect(null, { addTask, finishTask })(List);
