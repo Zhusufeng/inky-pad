@@ -2,9 +2,21 @@ import { ADD_LIST, ADD_TASK, FINISH_TASK } from '../constants';
 
 let defaultState = {
   lists: {},
-  history: {}
+  // history: {}
 };
 
+/*
+  Idea
+    1. Comment out below
+
+    2. Test: Create a separate reducer for list and task
+    You will need to use combineReducers
+    Mock up how the whole state should look like
+    
+    3. Test 2: Make list an object. Use a random ID for each task 
+    as the key. Create history key in object that holds an array
+    of finished tasks 
+*/
 const rootReducer = (state = defaultState, action) => {
   switch(action.type) {
     case ADD_LIST: {
