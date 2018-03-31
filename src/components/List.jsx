@@ -28,7 +28,20 @@ class List extends React.Component {
         <ul> 
           {
             this.props.items.map((item, key) => {
-              return (<li key={key}>{item}</li>);
+              return (
+                <li 
+                  key={key}
+                >
+                  <input 
+                    type="checkbox" 
+                    key={key} 
+                    id={}
+                  />
+                  <label for={}>
+                    {item}
+                  </label>
+                </li>
+              );
             })
           }
         </ul>
