@@ -1,6 +1,11 @@
 import { ADD_LIST, ADD_TASK, FINISH_TASK } from '../constants';
 
-const rootReducer = (state = {}, action) => {
+let defaultState = {
+  lists: {},
+  history: {}
+};
+
+const rootReducer = (state = defaultState, action) => {
   switch(action.type) {
     case ADD_LIST: {
       const { listName } = action; 
