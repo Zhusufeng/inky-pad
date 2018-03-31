@@ -32,7 +32,7 @@ const rootReducer = (state = {}, action) => {
     case FINISH_TASK: {
       const { task, listName } = action;
       const taskIndex = state.lists[listName].indexOf(task);
-      const newArray = state.lists[listName].slice(0, taskIndex).concat(state.lists[listName].slice(taskIndex));
+      const newArray = state.lists[listName].slice(0, taskIndex).concat(state.lists[listName].slice(taskIndex + 1));
       const updateList = {
         [listName]: newArray
       };
