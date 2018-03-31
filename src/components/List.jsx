@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTask } from '../actions';
+import { addTask, finishTask } from '../actions';
 
 class List extends React.Component {
   constructor (props) {
@@ -13,6 +13,11 @@ class List extends React.Component {
   addToList (task) {
     console.log('task is ', task);
     this.props.addTask(task, this.props.name);
+  }
+
+  finishTask (task) {
+    console.log('task is finished: ', task);
+    this.props.finishTask(task, this.props.name);
   }
 
   render () {
