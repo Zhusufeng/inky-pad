@@ -41,6 +41,6 @@ npm start
 
 Now go to your browser and use this address to see the app:
 ```
-localhost:8080/dist
+localhost:8080
 ```
 8080 is also the default port for webpack-dev-server
