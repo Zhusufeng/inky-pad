@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListMenu from './ListMenu.jsx';
 import ListsContainer from './ListsContainer.jsx';
+import '../styles.css';
 
 class App extends Component {
   constructor (props) {
