@@ -17,8 +17,8 @@ class ListMenu extends Component {
   render () {
     // console.log('this.props', this.props);
     return (
-      <div>
-        <h3>Lists</h3>
+      <div className="list-menu-container">
+        <h3>List Menu</h3>
         <div>
           <ul>
             {
